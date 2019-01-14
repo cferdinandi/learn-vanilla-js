@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+
+	<article>
+
+		<header>
+			<h1 class="no-padding-top">
+				{{ .Title }}
+			</h1>
+		</header>
+
+		{{ .Content }}
+
+		<h2 id="resources">Learning Resources</h2>
+
+		<ul>
+			{{- range .Site.Data.resources -}}
+				{{ if or (in .topics $.Params.topic) (in .topics "*") }}
+				<li><a href="{{ .url }}">{{ .name }}</a></li>
+				{{ end }}
+			{{- end -}}
+		</ul>
+
+		<h2 id="projects">Projects</h2>
+
+		<p><em>Coming soon...</em></p>
+
+	</article>
+
+{{ partial "footer.html" . }}

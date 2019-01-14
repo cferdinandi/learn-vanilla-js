@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+{{ partial "content-page.html" . }}
+
+{{ if false }}
+<ol class="list-spaced">
+{{ range .Pages }}
+	<li>
+		<strong><a href="{{ .URL }}">{{ .Title }}.</a></strong> {{ .Plain }}
+	</li>
+{{ end }}
+</ol>
+{{ end }}
+
+<ul class="list-unstyled">
+{{ range .Pages }}
+	<li class="margin-bottom">
+		<label for="{{ .Title | urlize }}">
+			<input type="checkbox" id="{{ .Title | urlize }}" data-save>
+			{{ .Title }}
+		</label>
+		{{ .Plain }} <a aria-label="Learn more about {{ .Title }}" href="{{ .URL }}">Learn more...</a>
+	</li>
+{{ end }}
+</ul>
+
+{{ partial "footer.html" . }}

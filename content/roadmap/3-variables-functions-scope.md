@@ -1,0 +1,14 @@
+---
+title: "Variables, Functions, and Scope"
+date: 2018-01-14T21:38:44-05:00
+draft: false
+noTitle: false
+fullWidth: false
+anchors: true
+weight: 30
+topic: "Variables, Functions, and Scope"
+---
+
+What are arrow functions? What’s function hoisting? What’s the difference between `var`, `let`, and `const`, and when should you use each?
+
+{{<cta for="learnvjs-roadmap">}}

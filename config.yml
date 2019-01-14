@@ -1,0 +1,45 @@
+# hostname (and path) to the root
+baseURL: "https://learnvanillajs.com"
+
+# Customer parameters
+params:
+  description: "A vanilla JS learning roadmap for front end web developers."
+  rssURL: ""
+  rssLimit: 7
+  minify: true
+
+# The language code for the site
+languageCode: "en-us"
+
+# Site title
+title: "Learn Vanilla JS"
+
+# theme to use (located by default in /themes/THEMENAME/)
+theme: "vanillajs"
+
+# Permalinks
+# See "content-management/permalinks"
+permalinks:
+  roadmap: /:section/:title/
+
+# Allows you to disable all page types and will render nothing related to 'kind';
+# values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"
+disableKinds: ["RSS", "hugoGeneratorInject", "404"]
+
+# Files to ignore while rendering
+ignoreFiles: []
+
+# the length of text to show in a .Summary
+summaryLength: 70
+
+# Pagination
+paginate: 35
+paginatePath: "page"
+
+# Markdown Options
+blackfriday:
+  fractions: false
+
+# Syntax Highlighting
+pygmentsCodefences: true
+pygmentsUseClasses: true
