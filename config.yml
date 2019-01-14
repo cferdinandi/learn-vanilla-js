@@ -1,5 +1,5 @@
 # hostname (and path) to the root
-baseURL: "https://learnvanillajs.com"
+baseURL: "http://learnvanillajs.com"
 
 # Customer parameters
 params:
