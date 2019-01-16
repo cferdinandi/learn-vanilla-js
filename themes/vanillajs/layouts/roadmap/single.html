@@ -25,16 +25,31 @@
 		<h2 id="resources">Learning Resources</h2>
 
 		<ul>
-			{{- range .Site.Data.resources -}}
-				{{ if or (in .topics $.Params.topic) (in .topics "*") }}
-				<li><a href="{{ .url }}">{{ .name }}</a></li>
-				{{ end }}
+		{{- range .Site.Data.resources -}}
+			{{- if or (in .topics $.Params.topic) (in .topics "*") -}}
+			<li><a href="{{ .url }}">{{ .name }}</a></li>
 			{{- end -}}
+		{{- end -}}
 		</ul>
 
-		<h2 id="projects">Projects</h2>
+		<h2 id="projects">Project Ideas</h2>
 
-		<p><em>Coming soon...</em></p>
+		{{- if and (isset .Params "projects") (ne .Params.projects "") -}}
+			{{ .Params.projects | markdownify }}
+		{{- else -}}
+		<ul class="list-unstyled padding-left-small">
+		{{- range .Site.Data.projects -}}
+			{{- if in .topics $.Params.topic -}}
+			<li>
+				<label class="text-inline">
+					<input type="checkbox" id="projects_{{ .name | urlize }}" data-save>
+					{{ .name }}
+				</label>{{- if ne .url "" -}} - <a aria-label="Project details for {{ .name }}" href="{{ .url }}">details</a>{{- end -}}
+			</li>
+			{{- end -}}
+		{{- end -}}
+		</ul>
+		{{- end -}}
 
 	</article>
 

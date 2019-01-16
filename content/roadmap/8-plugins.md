@@ -14,6 +14,7 @@ thingsToLearn:
     - Public methods
     - Multiple plugin instances
     - JS Modules
+projects: "Almost any script can be turned into a plugin. [Browse a list of project ideas here.](/projects)"
 ---
 
 How to write flexible, modular, scalable plugins that grow with you and your users.

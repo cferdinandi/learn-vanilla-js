@@ -15,6 +15,7 @@ thingsToLearn:
     - Setting default values for variables
     - Arrow functions
     - When to use `var`, `let`, and `const`
+projects: "These skills can be used on pretty much any JavaScript project. [Browse a list of project ideas here.](/projects)"
 ---
 
 What are arrow functions? What’s function hoisting? What’s the difference between `var`, `let`, and `const`, and when should you use each?
