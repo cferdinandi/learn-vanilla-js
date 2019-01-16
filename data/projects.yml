@@ -95,13 +95,13 @@ formSaver:
 
 progressBar:
     name: "Progress Bar"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/12c50d0b796fd3b733b8bb87d21d071d"
     topics:
         - DOM Manipulation
 
 filters:
     name: "Checkbox Filters"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/340700d063ba9eb23099389c8d94de9a"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -109,7 +109,7 @@ filters:
 
 mirror:
     name: "Mirror Text"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/6c842518ce8df6bd6c229783019c0d08"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -117,7 +117,7 @@ mirror:
 
 countdown:
     name: "Countdown Timer App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/795c87138f65911aefa44eb1e21bd8bf"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -126,7 +126,7 @@ countdown:
 
 todo:
     name: "Todo App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/28e8d21c47d1d4e703c0bfee310d60b2"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
