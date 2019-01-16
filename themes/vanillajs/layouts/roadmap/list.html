@@ -1,27 +1,24 @@
 {{ partial "header.html" . }}
 
-{{ partial "content-page.html" . }}
+<article>
 
-{{ if false }}
-<ol class="list-spaced">
-{{ range .Pages }}
-	<li>
-		<strong><a href="{{ .URL }}">{{ .Title }}.</a></strong> {{ .Plain }}
-	</li>
-{{ end }}
-</ol>
-{{ end }}
+	{{ partial "content-page-no-article.html" . }}
 
-<ul class="list-unstyled">
-{{ range $index, $pages :=.Pages }}
-	<li class="margin-bottom-medium bg-muted border padding">
-		<label for="{{ .Title | urlize }}">
-			<input type="checkbox" id="{{ .Title | urlize }}" data-save>
-			<strong>{{ add $index 1 }}. {{ .Title }}</strong>
-		</label>
+
+	{{ range $index, $pages :=.Pages }}
+	<div class="margin-bottom-medium bg-muted border padding">
+
+		<h2 class="h5 no-padding-top no-margin-bottom">
+			<label for="{{ .Title | urlize }}">
+				<input type="checkbox" id="{{ .Title | urlize }}" data-save>
+				<strong>{{ add $index 1 }}. {{ .Title }}</strong>
+			</label>
+		</h2>
+
 		<p class="margin-bottom-small padding-left">
 			<a aria-label="Resources and project ideas for {{ .Title }}" href="{{ .URL }}">Resources and project ideas &rarr;</a>
 		</p>
+
 		<ul class="list-unstyled no-margin-bottom padding-left">
 			{{- $.Scratch.Set "title" .Title -}}
 			{{ range .Params.thingsToLearn }}
@@ -33,8 +30,10 @@
 				</li>
 			{{ end }}
 		</ul>
-	</li>
-{{ end }}
-</ul>
+
+	</div>
+	{{ end }}
+
+</article>
 
 {{ partial "footer.html" . }}

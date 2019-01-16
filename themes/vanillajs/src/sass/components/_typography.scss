@@ -163,6 +163,14 @@ dt {
 .list-unstyled {
 	margin-left: 0;
 	list-style: none;
+
+	// @bugfix webkit doesn't read unstyled lists as lists
+	// 1. non-breaking space
+	// 2. Makes sure it doesn't mess up the DOM flow
+	li:before {
+		content: "\200B"; /* 1 */
+		position: absolute; /* 2 */
+	}
 }
 
 /**
