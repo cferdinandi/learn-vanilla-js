@@ -12,3 +12,5 @@ The best way to learn JavaScript is by writing lots of code, but coming up with 
 {{<cta for="learnvjs-projects">}}
 
 {{<projects>}}
+
+{{<mailchimp intro="true">}}
