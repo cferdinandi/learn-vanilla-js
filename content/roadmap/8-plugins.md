@@ -7,6 +7,13 @@ fullWidth: false
 anchors: true
 weight: 80
 topic: "Plugins"
+thingsToLearn:
+    - Code structure and design
+    - Settings and user options
+    - Events and callbacks
+    - Public methods
+    - Multiple plugin instances
+    - JS Modules
 ---
 
 How to write flexible, modular, scalable plugins that grow with you and your users.

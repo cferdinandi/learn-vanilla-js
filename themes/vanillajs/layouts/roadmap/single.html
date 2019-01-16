@@ -10,6 +10,18 @@
 
 		{{ .Content }}
 
+		<ul class="list-unstyled padding-left-small">
+			{{- $.Scratch.Set "title" .Title -}}
+			{{ range .Params.thingsToLearn }}
+				<li>
+					<label for="{{ ($.Scratch.Get "title") | urlize }}_{{ . |  urlize }}">
+						<input type="checkbox" id="{{ ($.Scratch.Get "title") | urlize }}_{{ . |  urlize }}" data-save>
+						{{ . | markdownify }}
+					</label>
+				</li>
+			{{ end }}
+		</ul>
+
 		<h2 id="resources">Learning Resources</h2>
 
 		<ul>

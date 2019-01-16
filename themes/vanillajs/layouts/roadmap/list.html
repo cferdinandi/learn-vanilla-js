@@ -13,13 +13,26 @@
 {{ end }}
 
 <ul class="list-unstyled">
-{{ range .Pages }}
-	<li class="margin-bottom">
+{{ range $index, $pages :=.Pages }}
+	<li class="margin-bottom-medium bg-muted border padding">
 		<label for="{{ .Title | urlize }}">
 			<input type="checkbox" id="{{ .Title | urlize }}" data-save>
-			{{ .Title }}
+			<strong>{{ add $index 1 }}. {{ .Title }}</strong>
 		</label>
-		{{ .Plain }} <a aria-label="Learn more about {{ .Title }}" href="{{ .URL }}">Learn more...</a>
+		<p class="margin-bottom-small padding-left">
+			<a aria-label="Resources and project ideas for {{ .Title }}" href="{{ .URL }}">Resources and project ideas &rarr;</a>
+		</p>
+		<ul class="list-unstyled no-margin-bottom padding-left">
+			{{- $.Scratch.Set "title" .Title -}}
+			{{ range .Params.thingsToLearn }}
+				<li>
+					<label for="{{ ($.Scratch.Get "title") | urlize }}_{{ . |  urlize }}">
+						<input type="checkbox" id="{{ ($.Scratch.Get "title") | urlize }}_{{ . |  urlize }}" data-save>
+						{{ . | markdownify }}
+					</label>
+				</li>
+			{{ end }}
+		</ul>
 	</li>
 {{ end }}
 </ul>

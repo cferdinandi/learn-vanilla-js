@@ -7,6 +7,16 @@ fullWidth: false
 anchors: true
 weight: 20
 topic: "Strings, Arrays, and Objects"
+thingsToLearn:
+    - Removing whitespace from a string
+    - Transforming text to uppercase and lowercase
+    - Converting strings to integers
+    - Replacing a portion of text with different text
+    - Getting a portion of a string
+    - Splitting a string into an array based on a character
+    - Adding items to an array or object
+    - Merging two or more arrays or objects together
+    - Filtering and transforming arrays
 ---
 
 Transform and edit strings, arrays, and objects to make working with them easier and more productive.

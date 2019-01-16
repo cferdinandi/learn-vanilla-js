@@ -13,11 +13,10 @@ Let's make {{<year>}} the year that you master&nbsp;JavaScript! You can do this.
 
 <div class="list-spaced">
 {{%md%}}
-- **[Daily Developer Tips.](https://gomakethings.com/articles/)** I send out a short email each weekday with code snippets, tools, techniques, and interesting stuff from around the web.
+- **[Daily Developer Tips.](/articles/)** I send out a short email each weekday with code snippets, tools, techniques, and interesting stuff from around the web.
 - **[Podcast.](https://vanillajspodcast.com)** A show about JavaScript for people who hate the complexity of modern front‑end web development.
-- **[Pocket Guides.](https://vanillajsguides.com/)** Short, focused ebooks and video courses made for beginners. Start building real JavaScript projects in under an hour.
+- **[The Toolkit.](https://vanillajstoolkit.com)** A growing collection of vanilla JavaScript code snippets, helper functions, polyfills, plugins, and learning resources.
+- **[Guides & Courses.](https://vanillajsguides.com/)** Short, focused ebooks and video courses made for beginners. Start building real JavaScript projects in under an hour.
 - **[Vanilla JS Academy.](https://vanillajsacademy.com/)** A project-based online JavaScript training program for beginners.
 {{%/md%}}
 </div>
-
-I'm also available for [speaking engagements, team training, and JavaScript consulting](https://gomakethings.com/talks/).

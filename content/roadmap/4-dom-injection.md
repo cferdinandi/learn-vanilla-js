@@ -7,6 +7,12 @@ fullWidth: false
 anchors: true
 weight: 40
 topic: "DOM Injection"
+thingsToLearn:
+    - Detecting when the DOM is ready
+    - Adding text and HTML to an element
+    - Creating new elements
+    - Injecting elements into the DOM
+    - Removing elements from the DOM
 ---
 
 How to generate dynamic DOM content.

@@ -7,6 +7,12 @@ fullWidth: false
 anchors: true
 weight: 70
 topic: "APIs"
+thingsToLearn:
+    - Common HTTP methods
+    - Calling API endpoints with XHR
+    - Transforming API response data
+    - API authentication
+    - Third-party data and XSS attacks
 ---
 
 How to work with APIs and integrate them into your sites and apps.

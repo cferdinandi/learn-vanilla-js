@@ -14,6 +14,15 @@
 
 
 /**
+ * Borders
+ */
+
+.border {
+	border: calc-em(1px) solid $color-gray-light;
+}
+
+
+/**
  * Font weights
  */
 
@@ -140,6 +149,10 @@
 	margin-bottom: calc-em(8px);
 }
 
+.margin-bottom-medium {
+	margin-bottom: 1em;
+}
+
 .margin-bottom-large {
 	margin-bottom: calc-em(32px);
 }
@@ -195,6 +208,18 @@
 
 .padding-bottom-xlarge {
 	padding-bottom: calc-em(48px);
+}
+
+.padding-left {
+	padding-left: 1.3125em;
+}
+
+.padding-left-small {
+	padding-left: calc-em(13px);
+}
+
+.padding {
+	padding: 1em;
 }
 
 

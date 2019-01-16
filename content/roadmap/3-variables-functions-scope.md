@@ -7,6 +7,14 @@ fullWidth: false
 anchors: true
 weight: 30
 topic: "Variables, Functions, and Scope"
+thingsToLearn:
+    - Function expressions vs. function declarations
+    - Function hoisting (and if it's a good thing)
+    - Scope, and why you need it
+    - Conditional variables
+    - Setting default values for variables
+    - Arrow functions
+    - When to use `var`, `let`, and `const`
 ---
 
 What are arrow functions? What’s function hoisting? What’s the difference between `var`, `let`, and `const`, and when should you use each?

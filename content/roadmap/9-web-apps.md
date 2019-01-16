@@ -7,6 +7,13 @@ fullWidth: false
 anchors: true
 weight: 90
 topic: "Web Apps"
+thingsToLearn:
+    - Rendering content into the DOM
+    - Sanitizing data from XSS attacks
+    - Components and state management
+    - Data reactivity
+    - Detecting user interactions and behaviors
+    - Routing
 ---
 
 How to build interactive web apps and single page apps.
