@@ -4,33 +4,33 @@
 
 showAndHide:
     name: "Show & Hide Component"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/3f90b47bf442512d555211c38ff8e569"
     topics:
         - DOM Manipulation
 
 accordion:
     name: "Accordion"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/d30b60c0cbbb437120f9d367a1a49760"
     topics:
         - DOM Manipulation
         - DOM Traversal
 
 passwordVisibility:
     name: "Toggle Password Visibility"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/36a9576625cae049a9ebe7e01d60d2db"
     topics:
         - DOM Manipulation
 
 tempApp:
     name: "Temperature Converter App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/11e34298213062660c2f3a2568660213"
     topics:
         - DOM Manipulation
         - Web Apps
 
 toc:
     name: "Table of Contents Component"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/ad092af3f469bcc871436a593f54e33f"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -39,7 +39,7 @@ toc:
 
 randomQuote:
     name: "Random Quote App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/b6e24d347d59e7029c3c41398318bf20"
     topics:
         - Strings, Arrays, and Objects
         - DOM Injection
@@ -47,7 +47,7 @@ randomQuote:
 
 topStories:
     name: "Top Stories from the NYT"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/c17df25b0826b529643743bc71d1eaec"
     topics:
         - Strings, Arrays, and Objects
         - DOM Injection
@@ -55,7 +55,7 @@ topStories:
 
 wordCount:
     name: "Word Count App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/2d47e9e83f33f526eab50b5474a9787c"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -64,7 +64,7 @@ wordCount:
 
 weather:
     name: "Weather App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/0d199802910e220085493fbe19882ce5"
     topics:
         - Strings, Arrays, and Objects
         - DOM Injection
