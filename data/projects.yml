@@ -73,13 +73,13 @@ weather:
 
 toggleTab:
     name: "Toggle Tab Component"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/7207b16cfee0b73c86797daba4b95ff1"
     topics:
         - DOM Manipulation
 
 lazyLoad:
     name: "Image Lazy Loader"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/67d6efea2019bd3f4f69f4f70a9f3a1e"
     topics:
         - DOM Manipulation
         - DOM Injection
@@ -87,7 +87,7 @@ lazyLoad:
 
 formSaver:
     name: "Form Saver"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/e7ef9673fa081290bdb1d33fe46087f6"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
