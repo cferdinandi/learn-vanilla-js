@@ -135,8 +135,8 @@ todo:
         - Web Apps
 
 picker:
-    name: "Random Picker"
-    url: ""
+    name: "Randomize"
+    url: "https://gist.github.com/cferdinandi/6bba5ba21564e090d158178caf8a2104"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -146,7 +146,7 @@ picker:
 
 monsters:
     name: "Avoid the Monster Game"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/dcfa502b5502d9f931be0f28e3d31bf3"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -155,7 +155,7 @@ monsters:
 
 adopt:
     name: "Find a Pet App"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/1b55046764aef0cac54d927facb4b0a0"
     topics:
         - DOM Manipulation
         - Strings, Arrays, and Objects
@@ -164,7 +164,7 @@ adopt:
 
 githubRepos:
     name: "GitHub Repos"
-    url: ""
+    url: "https://gist.github.com/cferdinandi/876b2201a6d91db8495d7ec4edfc4f82"
     topics:
         - Strings, Arrays, and Objects
         - DOM Injection
