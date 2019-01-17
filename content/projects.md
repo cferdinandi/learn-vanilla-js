@@ -9,6 +9,8 @@ anchors: true
 
 The best way to learn JavaScript is by writing lots of code, but coming up with ideas for projects can be hard. Here's a short list to get you started.
 
+After you’ve completed a project, check if off and the site will save your learning progress for you.
+
 {{<cta for="learnvjs-projects">}}
 
 {{<projects>}}
