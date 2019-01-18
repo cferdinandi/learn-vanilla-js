@@ -15,10 +15,10 @@ fullWidth: false
 <a class="btn btn-large" href="/roadmap">Get Started &rarr;</a>
 
 <div class="padding-top-large padding-bottom-large">
-	{{<testimonial for="jonathanStark2" photo="true">}}
+	{{<testimonial for="joePrevite" photo="true">}}
 </div>
 <div class="padding-bottom-large">
-	{{<testimonial for="markBaldwinSmith" photo="true">}}
+	{{<testimonial for="jonathanStark2" photo="true">}}
 </div>
 
 {{<cta for="learnvjs-home">}}
