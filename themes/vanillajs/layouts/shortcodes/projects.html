@@ -4,7 +4,7 @@
 		<label class="text-inline">
 			<input type="checkbox" id="projects_{{ .name | urlize }}" data-save>
 			{{ .name }}
-		</label>{{- if ne .url "" -}} - <a aria-label="Project details for {{ .name }}" href="{{ .url }}">details</a>{{- end -}}
+		</label>{{ if ne .url "" }} - <a aria-label="Project details for {{ .name }}" href="{{ .url }}">details</a>{{ end }}
 	</li>
 {{- end -}}
 </ul>
