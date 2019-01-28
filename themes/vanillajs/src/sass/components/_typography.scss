@@ -3,6 +3,14 @@
  * Sets font styles for entire site
  */
 
+html {
+	scroll-behavior: smooth;
+
+	@media screen and (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+}
+
 body {
 	background: $color-white;
 	border-top: calc-em(8px) solid $color-gray-light;
@@ -163,14 +171,6 @@ dt {
 .list-unstyled {
 	margin-left: 0;
 	list-style: none;
-
-	// @bugfix webkit doesn't read unstyled lists as lists
-	// 1. non-breaking space
-	// 2. Makes sure it doesn't mess up the DOM flow
-	li:before {
-		content: "\200B"; /* 1 */
-		position: absolute; /* 2 */
-	}
 }
 
 /**
@@ -193,6 +193,19 @@ dt {
 		&.list-inline-responsive li {
 			display: block;
 		}
+	}
+}
+
+/**
+ * @bugfix webkit doesn't read unstyled lists as lists
+ * 1. non-breaking space
+ * 2. Makes sure it doesn't mess up the DOM flow
+ */
+.list-unstyled,
+.list-inline {
+	& > li:before {
+		content: "\200B"; /* 1 */
+		position: absolute; /* 2 */
 	}
 }
 
