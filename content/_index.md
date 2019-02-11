@@ -12,6 +12,8 @@ fullWidth: false
 
 *__Vanilla JS__ is a term for coding with native JavaScript features and browser APIs instead of frameworks and libraries.*
 
+{{<cta for="learnvjs-home">}}
+
 <a class="btn btn-large" href="/roadmap">Get Started &rarr;</a>
 
 <div class="padding-top-large padding-bottom-large">
