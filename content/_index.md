@@ -23,8 +23,6 @@ fullWidth: false
 	{{<testimonial for="jonathanStark2" photo="true">}}
 </div>
 
-{{<cta for="learnvjs-home">}}
-
 {{<mailchimp intro="true">}}
 
 {{<about-me>}}
