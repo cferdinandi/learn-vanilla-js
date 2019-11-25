@@ -8,4 +8,9 @@
 	border: calc-em(1px) solid $color-gray-light;
 	margin-bottom: $spacing;
 	padding: calc-em(16px) calc-em(24px);
+
+	@media (prefers-color-scheme: dark) {
+		background-color: $color-black;
+		border-color: $color-gray-dark;
+	}
 }
