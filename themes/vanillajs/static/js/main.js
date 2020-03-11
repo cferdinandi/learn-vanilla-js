@@ -1,7 +1,7 @@
 /*!
  * learn-vanilla-js v1.0.0
  * The theme for learn-vanilla-js.com
- * (c) 2019 Chris Ferdinandi
+ * (c) 2020 Chris Ferdinandi
  * MIT License
  * http://github.com/cferdinandi/learn-vanilla-js
  */
@@ -13,31 +13,31 @@
 if (!Element.prototype.matches) {
 	Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
 }
-/**
- * Add links to headings
- * @param {String} selector The headings to get in the DOM (uses querySelectorAll)
- * @param {String} content  The content to add to the anchor link [default: #]
- * @param {String} styles   The class(es) to add to the link [default: anchor-link]
- */
-var addHeadingLinks = function (selector, content, styles) {
+// /**
+//  * Add links to headings
+//  * @param {String} selector The headings to get in the DOM (uses querySelectorAll)
+//  * @param {String} content  The content to add to the anchor link [default: #]
+//  * @param {String} styles   The class(es) to add to the link [default: anchor-link]
+//  */
+// var addHeadingLinks = function (selector, content, styles) {
 
-	'use strict';
+// 	'use strict';
 
-	// Make sure a selector was provided
-	if (!selector) return;
+// 	// Make sure a selector was provided
+// 	if (!selector) return;
 
-	// Variables
-	var headings = document.querySelectorAll(selector);
-	content = content || '#';
-	styles = styles || 'anchor-link';
+// 	// Variables
+// 	var headings = document.querySelectorAll(selector);
+// 	content = content || '#';
+// 	styles = styles || 'anchor-link';
 
-	// Loop through each heading and add an anchor link
-	for (var i = 0; i < headings.length; i++) {
-		if (!headings[i].id) continue;
-		headings[i].innerHTML += ' <a class="' + styles + '" href="#' + headings[i].id + '">' + content + '</a>';
-	}
+// 	// Loop through each heading and add an anchor link
+// 	for (var i = 0; i < headings.length; i++) {
+// 		if (!headings[i].id) continue;
+// 		headings[i].innerHTML += ' <a class="' + styles + '" href="#' + headings[i].id + '">' + content + '</a>';
+// 	}
 
-};
+// };
 var mailchimp = function (callback) {
 
 	'use strict';
@@ -248,66 +248,6 @@ var mailchimp = function (callback) {
 	form.addEventListener('submit', submitHandler, false);
 
 };
-var saveRoadmap = function () {
-
-	'use strict';
-
-	/**
-	 * Get data from localStorage
-	 * @return {Array} The data
-	 */
-	var getData = function () {
-		var data = localStorage.getItem('vanillaJSRoadmap');
-		return (data ? JSON.parse(data) : []);
-	};
-
-	/**
-	 * Save data to localStorage
-	 * @param  {Array} data The data
-	 */
-	var saveData = function (data) {
-		localStorage.setItem('vanillaJSRoadmap', JSON.stringify(data));
-	};
-
-	/**
-	 * Load localStorage data into the DOM
-	 */
-	var loadData = function () {
-		var checkboxes = document.querySelectorAll('[data-save]');
-		var data = getData();
-		if (data.length < 1) return;
-		Array.prototype.forEach.call(checkboxes, (function (checkbox) {
-			if (data.indexOf(checkbox.id) > -1) {
-				checkbox.checked = true;
-			}
-		}));
-	};
-
-	/**
-	 * On click, save checkbox state
-	 */
-	var clickHandler = function (event) {
-		if (!event.target.hasAttribute('data-save')) return;
-		var data = getData();
-		if (event.target.checked) {
-			data.push(event.target.id);
-		} else {
-			var index = data.indexOf(event.target.id);
-			if (index > -1) {
-				data.splice(index, 1);
-			}
-		}
-		saveData(data);
-	};
-
-	/**
-	 * Init Plugin
-	 */
-
-	loadData();
-	document.documentElement.addEventListener('click', clickHandler, false);
-
-};
 /**
  * Script initializations
  */
@@ -321,12 +261,7 @@ if (document.querySelector('#mailchimp-form')) {
 	}));
 }
 
-// Save roadmap
-if (document.querySelector('[data-save]')) {
-	saveRoadmap();
-}
-
-// Anchor links on posts
-if (document.body.matches('.js-anchors')) {
-	addHeadingLinks('h2, h3, h4, h5, h6', '#', 'link-no-underline');
-}
+// // Anchor links on posts
+// if (document.body.matches('.js-anchors')) {
+// 	addHeadingLinks('h2, h3, h4, h5, h6', '#', 'link-no-underline');
+// }

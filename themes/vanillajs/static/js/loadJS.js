@@ -1,7 +1,7 @@
 /*!
  * learn-vanilla-js v1.0.0
  * The theme for learn-vanilla-js.com
- * (c) 2019 Chris Ferdinandi
+ * (c) 2020 Chris Ferdinandi
  * MIT License
  * http://github.com/cferdinandi/learn-vanilla-js
  */

@@ -12,9 +12,9 @@
 	padding-bottom: 0.5em;
 	text-align: center;
 
-	@media (min-width: $bp-large) {
-		text-align: left;
-	}
+	// @media (min-width: $bp-large) {
+	// 	text-align: left;
+	// }
 
 	// @media (max-width: $bp-large) {
 	// 	.js-astro & {
@@ -86,9 +86,9 @@
 	// 	font-size: calc-em(16px);
 	// }
 
-	@media (min-width: $bp-large) {
-		text-align: right;
-	}
+	// @media (min-width: $bp-large) {
+	// 	text-align: right;
+	// }
 
 	// @media (max-width: $bp-large) {
 	// 	.js-astro & {

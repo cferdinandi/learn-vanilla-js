@@ -1,7 +1,7 @@
 /*!
  * learn-vanilla-js v1.0.0
  * The theme for learn-vanilla-js.com
- * (c) 2019 Chris Ferdinandi
+ * (c) 2020 Chris Ferdinandi
  * MIT License
  * http://github.com/cferdinandi/learn-vanilla-js
  */
@@ -1657,13 +1657,6 @@ td {
   text-align: center;
 }
 
-@media (min-width: 60em) {
-  /* line 9, src/sass/components/_nav-main.scss */
-  .nav-wrap {
-    text-align: left;
-  }
-}
-
 /**
  * The logo
  */
@@ -1726,13 +1719,6 @@ td {
   /**
 	 * Active link styling
 	 */
-}
-
-@media (min-width: 60em) {
-  /* line 79, src/sass/components/_nav-main.scss */
-  .nav {
-    text-align: right;
-  }
 }
 
 /* line 99, src/sass/components/_nav-main.scss */
