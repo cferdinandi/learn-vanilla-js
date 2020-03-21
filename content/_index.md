@@ -12,7 +12,7 @@ fullWidth: false
 
 (*No, it's not another framework.*)
 
-{{<cta for="learnvjs-home">}}
+{{<cta for="funnel">}}
 
 
 ## Why should you learn vanilla JS?
