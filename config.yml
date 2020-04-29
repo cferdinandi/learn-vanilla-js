@@ -22,7 +22,7 @@ languageCode: "en-us"
 title: "Learn Vanilla JS"
 
 # theme to use (located by default in /themes/THEMENAME/)
-theme: "vanillajs"
+theme: "gmt"
 
 # Permalinks
 # See "content-management/permalinks"
