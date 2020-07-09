@@ -73,18 +73,18 @@
 
 		};
 
+		var addRole = function () {
+			if (!status) return;
+			status.setAttribute('role', 'status');
+		};
+
 		var clearStatus = function () {
 
 			// Bail if there's no status container
 			if (!status) return;
 
-			// Wipe classes and HTML from the status
-			status.textContent = '';
-			status.className = '';
-
-			// Wipe classes and aria labels from the email field
-			email.className = '';
-			email.removeAttribute('aria-describedby');
+			// Wipe classes and update status HTML
+			showStatus(btn.getAttribute('data-processing'), true);
 
 		};
 
@@ -99,28 +99,12 @@
 			// Set status class
 			if (success) {
 				status.className = 'success-message';
-				status.setAttribute('tabindex', '-1');
-				status.focus();
+				email.className = '';
 			} else {
 				status.className = 'error-message';
 				email.className = 'error';
-				email.setAttribute('aria-describedby', 'mc-status');
-				email.focus();
 			}
 
-		};
-
-		var disableButton = function () {
-			if (!btn) return;
-			btn.setAttribute('data-original', btn.innerHTML);
-			btn.innerHTML = btn.getAttribute('data-processing');
-			btn.classList.add('disabled');
-		};
-
-		var enableButton = function () {
-			if (!btn) return;
-			btn.innerHTML = btn.getAttribute('data-original');
-			btn.classList.remove('disabled');
 		};
 
 		var sendData = function (params) {
@@ -144,7 +128,8 @@
 				}
 
 				// Reenable button
-				enableButton();
+				form.removeAttribute('data-submitting');
+
 
 				// If there's a callback, run it
 				if (callback && typeof callback === 'function') {
@@ -164,11 +149,8 @@
 		// Submit the form
 		var submitForm = function () {
 
-			// If already submitting, don't submit again
-			if (btn && btn.matches('.disabled')) return;
-
-			// Disable the submit button
-			disableButton();
+			// Add submitting state
+			form.setAttribute('data-submitting', true);
 
 			// Send the data to the MailChimp API
 			sendData(serialize(form));
@@ -202,6 +184,9 @@
 			// Stop form from submitting
 			event.preventDefault();
 
+			// Don't run again if form currrent submitting
+			if (form.hasAttribute('data-submitting')) return;
+
 			// Clear the status
 			clearStatus();
 
@@ -219,6 +204,7 @@
 		// Event Listeners & Inits
 		//
 
+		addRole();
 		form.addEventListener('submit', submitHandler, false);
 
 	};
