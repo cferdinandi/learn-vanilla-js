@@ -37,9 +37,11 @@
 
 	<body class="type-{{ .Type }} {{ if .IsPage }}page-single{{ else }}page-list{{ end }}{{ if .Params.anchors }} js-anchors{{ end }}" id="page-{{ .UniqueID }}">
 
+		{{ if false }}
 		{{ partial "nav-a11y.html" }}
 
 		{{ partial "nav-main.html" . }}
+		{{ end }}
 
 		<main id="main" tabindex="-1">
 
