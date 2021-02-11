@@ -14,22 +14,22 @@
 	 *
 	 * @param {Function} callback
 	 */
-	var mailchimp = function (callback) {
+	function mailchimp (callback) {
 
 		//
 		// Variables
 		//
 
 		// Fields
-		var form = document.querySelector('#mailchimp-form');
+		let form = document.querySelector('#mailchimp-form');
 		if (!form) return;
-		var email = form.querySelector('#mailchimp-email');
+		let email = form.querySelector('#mailchimp-email');
 		if (!email) return;
-		var status = form.querySelector('#mc-status');
-		var btn = form.querySelector('[data-processing]');
+		let status = form.querySelector('#mc-status');
+		let btn = form.querySelector('[data-processing]');
 
 		// Messages
-		var messages = {
+		let messages = {
 			empty: 'Please provide an email address.',
 			notEmail: 'Please use a valid email address.',
 			success: 'Success! Thanks for inviting me to your inbox.',
@@ -37,7 +37,7 @@
 		};
 
 		// Endpoint
-		var endpoint = 'https://gomakethings.com/checkout/wp-json/gmt-mailchimp/v1/subscribe';
+		let endpoint = 'https://gomakethings.com/checkout/wp-json/gmt-mailchimp/v1/subscribe';
 
 
 		//
@@ -49,21 +49,17 @@
 		 * @param  {Form}   form The form
 		 * @return {String}      The query string
 		 */
-		var serializeForm = function (form) {
-			var arr = [];
-			var formData = new FormData(form);
-			for (var key of formData.keys()) {
-				arr.push(encodeURIComponent(key) + '=' + encodeURIComponent(formData.get(key)));
-			}
-			return arr.join('&');
-		};
+		function serializeForm (form) {
+			let data = new FormData(form);
+			return new URLSearchParams(data).toString();
+		}
 
 		/**
 		 * Show a status message
 		 * @param  {String}  msg     The message to show
 		 * @param  {Boolean} success If true, the status was successful
 		 */
-		var showStatus = function (msg, success) {
+		function showStatus (msg, success) {
 
 			// Bail if there's no status container
 			if (!status) return;
@@ -75,13 +71,13 @@
 			status.className = success ? 'success-message' : 'error-message';
 			email.className = success ? '' : 'error';
 
-		};
+		}
 
 		/**
 		 * Send data to the API
 		 * @param  {String} params The form parameters
 		 */
-		var sendData = function (params) {
+		function sendData (params) {
 			fetch(endpoint, {
 				method: 'POST',
 				body: params,
@@ -93,7 +89,7 @@
 			}).then(function (data) {
 
 				// Show status
-				var success = data.code >= 200 && data.code < 300 ? true : false;
+				let success = data.code >= 200 && data.code < 300 ? true : false;
 				showStatus(success ? messages.success : data.message, success);
 
 				// If there's a callback, run it
@@ -106,12 +102,12 @@
 			}).finally(function () {
 				form.removeAttribute('data-submitting');
 			});
-		};
+		}
 
 		/**
 		 * Submit the form to the API
 		 */
-		var submitForm = function () {
+		function submitForm () {
 
 			// Add submitting state
 			form.setAttribute('data-submitting', true);
@@ -119,21 +115,21 @@
 			// Send the data to the MailChimp API
 			sendData(serializeForm(form));
 
-		};
+		}
 
 		/**
 		 * Validate the email address
 		 * @return {Boolean} If true, email is valid
 		 */
-		var isEmail = function () {
+		function isEmail () {
 			return /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$/.test(email.value);
-		};
+		}
 
 		/**
 		 * Validate the form fields
 		 * @return {Boolean} If true, form is valid
 		 */
-		var validate = function () {
+		function validate () {
 
 			// If no email is provided
 			if (email.value.length < 1) {
@@ -149,13 +145,13 @@
 
 			return true;
 
-		};
+		}
 
 		/**
 		 * Handle submit events
 		 * @param  {Event} event The event object
 		 */
-		var submitHandler = function (event) {
+		function submitHandler (event) {
 
 			// Stop form from submitting
 			event.preventDefault();
@@ -167,22 +163,22 @@
 			showStatus(btn.getAttribute('data-processing'), true);
 
 			// Validate email
-			var valid = validate();
+			let valid = validate();
 
 			if (valid) {
 				submitForm();
 			}
 
-		};
+		}
 
 
 		//
 		// Event Listeners & Inits
 		//
 
-		form.addEventListener('submit', submitHandler, false);
+		form.addEventListener('submit', submitHandler);
 
-	};
+	}
 
 	// Mailchimp form
 	if (document.querySelector('#mailchimp-form')) {
