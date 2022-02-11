@@ -20,4 +20,4 @@ Let’s make {{<year>}} the year that you master JavaScript! You can do this. I 
 
 {{<cta for="products">}}
 
-{{<about-me>}}
+{{<cta for="bio-short">}}
