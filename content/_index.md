@@ -9,7 +9,7 @@ description: ""
 
 <h1 class="margin-bottom-small text-xlarge text-normal">A <em>free</em> JavaScript course for beginners.</h1>
 
-<span class="text-large">Get 45 lessons, 7 projects, and 1 rock solid foundation for your JavaScript journey. Build your first JS library in about a week.</span>
+<span class="text-large">Get 45 lessons, 7 projects, and 1 rock solid foundation for your JavaScript journey. Build your first JS library in a few hours.</span>
 
 {{<cta for="funnel">}}
 
