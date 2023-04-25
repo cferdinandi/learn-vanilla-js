@@ -1,0 +1,8 @@
+{{- $data := getJSON $.Site.Params.api -}}
+{{- $ctas := index $data "ctas" -}}
+
+<h2>Not ready yet? Get daily developer tips.</h2>
+
+{{ if isset $ctas "ck-blurb" }}<p>{{ index $ctas "ck-blurb" | markdownify }}</p>{{ end }}
+
+{{ partial "mailchimp-form.html" }}

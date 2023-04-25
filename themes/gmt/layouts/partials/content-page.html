@@ -1,7 +1,7 @@
 <article>
 
 	{{ if not .Params.noTitle }}
-	<h1>{{ ( .Title | htmlUnescape ) }}</h1>
+	<h1>{{ if eq .Kind "taxonomy" }}Articles on {{ end }}{{ .Title | htmlUnescape }}</h1>
 	{{ end }}
 
 	{{ .Content }}

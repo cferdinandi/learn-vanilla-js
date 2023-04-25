@@ -1,0 +1,14 @@
+{{- $data := getJSON $.Site.Params.api -}}
+{{- $course := $data.products.learnJS -}}
+
+{{ if .Get "callout" }}
+<div class="callout padding-top-small padding-bottom-small">
+	<h2 class="h3">Join today for free!</h2>
+{{ end }}
+
+	<p><a class="btn btn-large btn-block edd-buy-now-button" href="https://gomakethings.com/checkout?edd_action=add_to_cart&download_id={{ $course.id }}&edd_options[price_id]=3&ref=https%3A%2F%2Flearnvanillajs.com"><strong>Get <em>Learn JavaScript</em> for&nbsp;{{ $course.price | safeHTML }}</strong></a></p>
+	{{ partial "sales-numbers" . }}
+
+{{ if .Get "callout" }}
+</div>
+{{ end }}

@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Vanilla JS Projects | Vanilla JS Projects</title>
+		<meta name="description" content="">
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+		
+		<link rel="canonical" href="https://vanillajsprojects.com/">
+		<meta http-equiv="refresh" content="0; url=/">
+		
+
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@ChrisFerdinandi">
+		<meta property="og:url" content="/projects/">
+		<meta property="og:title" content="Vanilla JS Projects">
+		<meta property="og:description" content="">
+		
+
+		
+		
+		<link rel="shortcut icon" href="https://vanillajsprojects.com/img/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32" href="https://vanillajsprojects.com/img/favicon.ico">
+
+		
+
+		
+		<style type="text/css">
+			/*! gmt-theme v2.6.0 | (c) 2021 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/gmt-theme */
+/* pt-serif-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Serif";
+	font-style: normal;
+	font-weight: 400;
+	src: local("PT Serif"), local("PTSerif-Regular"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-regular.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-regular.woff") format("woff");
+}
+/* pt-serif-italic - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Serif";
+	font-style: italic;
+	font-weight: 400;
+	src: local("PT Serif Italic"), local("PTSerif-Italic"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-italic.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-italic.woff") format("woff");
+}
+/* pt-serif-700 - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Serif";
+	font-style: normal;
+	font-weight: 700;
+	src: local("PT Serif Bold"), local("PTSerif-Bold"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-700.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-700.woff") format("woff");
+}
+/* pt-serif-700italic - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Serif";
+	font-style: italic;
+	font-weight: 700;
+	src: local("PT Serif Bold Italic"), local("PTSerif-BoldItalic"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-700italic.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-serif-v11-latin-700italic.woff") format("woff");
+}
+/* pt-sans-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: local("PT Sans"), local("PTSerif-Regular"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-regular.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-regular.woff") format("woff");
+}
+/* pt-sans-italic - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Sans";
+	font-style: italic;
+	font-weight: 400;
+	src: local("PT Sans Italic"), local("PTSerif-Italic"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-italic.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-italic.woff") format("woff");
+}
+/* pt-sans-700 - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Sans";
+	font-style: normal;
+	font-weight: 700;
+	src: local("PT Sans Bold"), local("PTSerif-Bold"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-700.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-700.woff") format("woff");
+}
+/* pt-sans-700italic - latin */
+@font-face {
+	font-display: swap;
+	font-family: "PT Sans";
+	font-style: italic;
+	font-weight: 700;
+	src: local("PT Sans Bold Italic"), local("PTSerif-BoldItalic"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-700italic.woff2") format("woff2"), url("https://gomakethings.com/fonts/pt-sans-v12-latin-700italic.woff") format("woff");
+}
+			/*! gmt-theme v2.7.0 | (c) 2022 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/gmt-theme */
+@charset "UTF-8";
+/**
+ * @section CSS Reset
+ * Adapted from Andy Bell's modern CSS reset
+ * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
+ */
+/**
+ * Remove the tap delay in webkit
+ * @link https://medium.com/@adactio/delay-a9df9edceef3#.7dmbl3xow
+ */
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+	touch-action: manipulation;
+}
+
+button,
+[type=submit] {
+	-webkit-appearance: none;
+}
+
+/**
+ * Add box sizing to everything
+ * @link http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+/**
+ * 1. Force scrollbar display to prevent jumping on pages.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+	overflow-y: scroll;
+	/* 1 */
+	text-size-adjust: 100%;
+	/* 2 */
+}
+
+/**
+ * 1. Remove the margin in all browsers (opinionated).
+ * 2. For the body to fill the viewport
+ */
+body {
+	margin: 0;
+	/* 1 */
+	min-height: 100vh;
+	/* 2 */
+}
+
+/**
+ * Prevent img and video elements from spilling outside of the page on smaller screens.
+ */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+/**
+ * Prevent iframe, object, and embed elements from spilling outside of the page on smaller screens.
+ * height: auto causes iframes to smush, so it's omitted here.
+ */
+iframe,
+object,
+embed {
+	max-width: 100%;
+}
+
+audio {
+	width: 100%;
+}
+
+/**
+ * @workaround Remove focus from tabindex="-1" elements which are only script focusable
+ * @link https://code.google.com/p/chromium/issues/detail?id=37721
+ */
+[tabindex="-1"]:focus {
+	outline: none;
+}
+
+/**
+ * @section Grid
+ * Structure and layout
+ */
+/**
+ * Base grid styles: single column
+ */
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 38em;
+	width: 88%;
+}
+
+.container-large {
+	max-width: 60em;
+}
+
+/**
+ * Grids
+ */
+@media (min-width: 38em) {
+	.row {
+		display: flex;
+		margin-left: -1.4%;
+		margin-right: -1.4%;
+		justify-content: space-between;
+	}
+
+	.row-reverse {
+		flex-direction: row-reverse;
+	}
+
+	.grid-auto,
+.grid-fourth,
+.grid-third,
+.grid-two-thirds,
+.grid-half,
+.grid-three-fourths {
+		margin-left: 1.4%;
+		margin-right: 1.4%;
+	}
+
+	.grid-auto {
+		flex: 1 1;
+	}
+
+	.grid-fifth {
+		width: 20%;
+	}
+
+	.grid-fourth {
+		width: 25%;
+	}
+
+	.grid-third {
+		width: 33.33333%;
+	}
+
+	.grid-two-thirds {
+		width: 66.66666%;
+	}
+
+	.grid-half {
+		width: 50%;
+	}
+
+	.grid-three-fourths {
+		width: 75%;
+	}
+
+	.grid-four-fifths {
+		width: 80%;
+	}
+}
+/**
+ * Columns
+ */
+@media (min-width: 38em) {
+	.list-columns {
+		column-count: 2;
+	}
+}
+/**
+ * @section Typography
+ * Sets font styles for entire site
+ */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #ffffff;
+	border-top: 0.5em solid #e5e5e5;
+	color: #272727;
+	font-family: "PT Sans", sans-serif;
+	font-size: 112.5%;
+	line-height: 1.5;
+}
+@media (min-width: 38em) {
+	body {
+		line-height: 1.5625em;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #1f252f;
+		border-top-color: #808080;
+		color: #ffffff;
+	}
+}
+
+p {
+	margin: 0 0 1.5625em;
+}
+
+/**
+ * Hyperlink styling
+ */
+a {
+	color: #0088cc;
+	text-decoration-skip-ink: auto;
+	word-wrap: break-word;
+}
+a:active, a:focus, a:hover {
+	color: #005580;
+}
+main a:not(.btn):visited {
+	color: #800080;
+}
+@media (prefers-color-scheme: dark) {
+	a {
+		color: #73cffa;
+	}
+	a:active, a:focus, a:hover {
+		color: #29b6f7;
+	}
+	main a:not(.btn):visited {
+		color: #debfde;
+	}
+}
+
+.link-no-underline, .nav-secondary a {
+	text-decoration: none;
+}
+.link-no-underline:active, .nav-secondary a:active, .link-no-underline:focus, .nav-secondary a:focus, .link-no-underline:hover, .nav-secondary a:hover {
+	text-decoration: underline;
+}
+
+/**
+ * Remove default link styling
+ */
+.link-plain, .link-plain:visited {
+	color: #272727;
+	text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+	.link-plain, .link-plain:visited {
+		color: #ffffff;
+	}
+}
+.link-plain:active, .link-plain:focus, .link-plain:hover {
+	color: #0088cc;
+}
+@media (prefers-color-scheme: dark) {
+	.link-plain:active, .link-plain:focus, .link-plain:hover {
+		color: #73cffa;
+	}
+}
+
+/**
+ * List styling
+ */
+ul,
+ol {
+	margin: 0 0 1.5625em 2em;
+	padding: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+
+li {
+	margin-bottom: 0.5em;
+}
+@media (min-width: 38em) {
+	li {
+		margin-bottom: 0.25em;
+	}
+}
+.list-spaced li {
+	margin-bottom: 1.5625em;
+}
+@media (min-width: 38em) {
+	.list-spaced li {
+		margin-bottom: 1em;
+	}
+}
+.list-spaced-small li {
+	margin-bottom: 1.125em;
+}
+@media (min-width: 38em) {
+	.list-spaced-small li {
+		margin-bottom: 0.6875em;
+	}
+}
+
+dl,
+dd {
+	margin: 0;
+	padding: 0;
+}
+
+dd {
+	margin-bottom: 1.5625em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+/**
+ * @bugfix Prevent webkit from removing list semantics
+ * 1. Add a non-breaking space
+ * 2. Make sure it doesn't mess up the DOM flow
+ */
+.list-inline, .nav, .list-unstyled {
+	list-style: none;
+	margin-left: 0;
+}
+.list-inline > li::before, .nav > li::before, .list-unstyled > li::before {
+	content: "​";
+	/* 1 */
+	position: absolute;
+	/* 2 */
+}
+
+/**
+ * Removes list styling.
+ * For semantic reasons, should only be used on unordered lists.
+ */
+.list-unstyled {
+	margin-left: 0;
+}
+
+/**
+ * Display lists on a single line.
+ */
+.list-inline, .nav {
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+	padding: 0;
+}
+.list-inline > li, .nav > li {
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+@media (max-width: 38em) {
+	.list-inline.list-inline-responsive > li, .list-inline-responsive.nav > li {
+		display: block;
+	}
+}
+
+.list-inline-spaced {
+	margin-left: -1.3125em;
+	margin-right: -1.3125em;
+}
+.list-inline-spaced > li {
+	margin-left: 1.3125em;
+	margin-right: 1.3125em;
+}
+
+.list-inline-compact {
+	margin-left: -0.25em;
+	margin-right: -0.25em;
+}
+.list-inline-compact li {
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+
+/**
+ * Heading styling for h1 through h6 elements.
+ * Heading class lets you use one heading type for semantics, but style it as another heading type.
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-family: "PT Serif", sans-serif;
+	line-height: 1.2;
+	margin: 0 0 1em;
+	padding: 1em 0 0;
+	word-wrap: break-word;
+}
+
+h1,
+.h1 {
+	font-size: 1.5em;
+	padding-top: 0.5em;
+}
+@media (min-width: 38em) {
+	h1,
+.h1 {
+		font-size: 1.75em;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 1.3125em;
+}
+
+h3,
+.h3 {
+	font-size: 1.1875em;
+}
+
+h4, h5, h6,
+.h4, .h5, .h6 {
+	font-size: 1em;
+}
+
+h4,
+.h4 {
+	font-size: 0.8125em;
+	text-transform: uppercase;
+}
+
+/**
+ * Lines
+ */
+hr {
+	border: 0;
+	border-top: 1px solid #e5e5e5;
+	margin: 2em auto;
+}
+@media (prefers-color-scheme: dark) {
+	hr {
+		border-top-color: #808080;
+	}
+}
+
+.line-secondary {
+	width: 50%;
+}
+
+.line-clear {
+	border-top-color: transparent;
+}
+
+.line-overlay {
+	margin-top: -2.8em;
+}
+.line-overlay > strong {
+	background-color: #ffffff;
+	display: inline-block;
+	padding: 0 1em;
+}
+@media (min-width: 38em) {
+	.line-overlay > strong {
+		padding: 0 2em;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.line-overlay > strong {
+		background-color: #1f252f;
+	}
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+	background: #fbf9c9;
+	color: #272727;
+}
+@media (prefers-color-scheme: dark) {
+	mark {
+		background: transparent;
+		color: #ffffff;
+	}
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+	border-left: 0.25em solid #e5e5e5;
+	font-style: italic;
+	margin: 0 0 1.5625em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+blockquote pre {
+	font-style: normal;
+}
+
+cite {
+	color: #808080;
+	display: block;
+	font-size: 0.9375em;
+	padding-top: 1em;
+}
+@media (prefers-color-scheme: dark) {
+	cite {
+		color: #e5e5e5;
+	}
+}
+
+/**
+ * @section Code
+ * Styling for code and preformatted text.
+ */
+code,
+kbd,
+pre,
+samp {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+	font-size: 0.875em;
+}
+
+code {
+	color: #dd1144;
+	word-wrap: break-word;
+}
+@media (prefers-color-scheme: dark) {
+	code {
+		color: #ded7d9;
+	}
+}
+
+pre {
+	background-color: #f7f7f7;
+	display: block;
+	line-height: 1.5;
+	margin: 0 0 1.5625em;
+	overflow: auto;
+	padding: 0.8125em;
+	tab-size: 2;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+@media (min-width: 38em) {
+	pre {
+		tab-size: 4;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	pre {
+		background-color: #343d4d;
+	}
+}
+pre code {
+	color: inherit;
+	font-size: 1em;
+}
+
+/**
+ * @section Chroma syntax highlighting
+ * Styles for Hugo's syntax highlighting engine
+ */
+@media screen {
+	.chroma .err,
+.chroma .kc,
+.chroma .no,
+.chroma .py,
+.chroma .nt,
+.chroma .ss,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+		color: #905;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .err,
+.chroma .kc,
+.chroma .no,
+.chroma .py,
+.chroma .nt,
+.chroma .ss,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+		color: #cfcfcf;
+	}
+}
+@media screen {
+	.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .nb,
+.chroma .s {
+		color: #07a;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .nb,
+.chroma .s {
+		color: #95dbfb;
+	}
+}
+@media screen {
+	.chroma .n,
+.chroma .na,
+.chroma .nc,
+.chroma .ne,
+.chroma .l,
+.chroma .ld,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .s1,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx {
+		color: #690;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .n,
+.chroma .na,
+.chroma .nc,
+.chroma .ne,
+.chroma .l,
+.chroma .ld,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .s1,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx {
+		color: #c5d99c;
+	}
+}
+@media screen {
+	.chroma .bp,
+.chroma .nd,
+.chroma .nl,
+.chroma .sd,
+.chroma .p,
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+		color: slategray;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .bp,
+.chroma .nd,
+.chroma .nl,
+.chroma .sd,
+.chroma .p,
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf {
+		color: #e5e5e5;
+	}
+}
+@media screen {
+	.chroma .ni,
+.chroma .o {
+		color: #a67f59;
+		background: rgba(255, 255, 255, 0.5);
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .ni,
+.chroma .o {
+		background: transparent;
+		color: #e5e5e5;
+	}
+}
+@media screen {
+	.chroma .nf,
+.chroma .fm,
+.chroma .ow {
+		color: #dd4a68;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .nf,
+.chroma .fm,
+.chroma .ow {
+		color: #deb6be;
+	}
+}
+@media screen {
+	.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm,
+.chroma .sr {
+		color: #e90;
+	}
+}
+@media screen and (prefers-color-scheme: dark) {
+	.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm,
+.chroma .sr {
+		color: #ede1ca;
+	}
+}
+@media screen {
+	.chroma .nn {
+		opacity: 0.7;
+	}
+}
+@media screen {
+	.chroma .ge {
+		font-style: italic;
+	}
+}
+@media screen {
+	.chroma .gs {
+		font-weight: bold;
+	}
+}
+/**
+ * @section Buttons
+ * Styling for CSS buttons.
+ */
+/**
+ * Primary buttons
+ */
+.btn {
+	background-color: #f7272f;
+	border: 0.125em solid #f7272f;
+	display: inline-block;
+	font-size: 0.9375em;
+	font-weight: normal;
+	line-height: 1.2;
+	margin-right: 0.3125em;
+	margin-bottom: 0.3125em;
+	padding: 0.5em 0.6875em;
+}
+.btn, .btn:focus {
+	color: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+	.btn, .btn:focus {
+		background-color: #fdd4d5;
+		border-color: #fdd4d5;
+		color: #000000;
+	}
+}
+.btn:hover, .btn:active {
+	background-color: #cb070e;
+	border-color: #cb070e;
+	color: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+	.btn:hover, .btn:active {
+		background-color: #fdbbbd;
+		border-color: #fdbbbd;
+		color: #000000;
+	}
+}
+a.btn {
+	text-decoration: none;
+}
+
+/**
+ * Secondary buttons
+ */
+.btn-secondary {
+	background-color: #343d4d;
+	border-color: #343d4d;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-secondary {
+		background-color: #d2d7e1;
+		border-color: #d2d7e1;
+		color: #000000;
+	}
+}
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary.active {
+	background-color: #15191f;
+	border-color: #15191f;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-secondary:hover, .btn-secondary:active, .btn-secondary.active {
+		background-color: #c3cad6;
+		border-color: #c3cad6;
+		color: #000000;
+	}
+}
+
+/**
+ * Tertiary buttons
+ */
+.btn-tertiary {
+	background-color: #0088cc;
+	border-color: #0088cc;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-tertiary {
+		background-color: #cceeff;
+		border-color: #cceeff;
+		color: #000000;
+	}
+}
+.btn-tertiary:hover, .btn-tertiary:active, .btn-tertiary.active {
+	background-color: #005580;
+	border-color: #005580;
+}
+@media (prefers-color-scheme: dark) {
+	.btn-tertiary:hover, .btn-tertiary:active, .btn-tertiary.active {
+		background-color: #b3e6ff;
+		border-color: #b3e6ff;
+		color: #000000;
+	}
+}
+
+/**
+ * Active state
+ */
+.btn:active {
+	box-shadow: inset 0 0.15625em 0.25em rgba(0, 0, 0, 0.15), 0 1px 0.15625em rgba(0, 0, 0, 0.05);
+	outline: 0;
+}
+
+/**
+ * Disabled state
+ */
+.btn[disabled],
+[data-submitting] .btn {
+	box-shadow: none;
+	cursor: not-allowed;
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/**
+ * Button size
+ */
+.btn-large {
+	font-size: 1em;
+	line-height: normal;
+	padding: 0.6875em 0.9375em;
+}
+
+/**
+ * Block-level buttons
+ */
+.btn-block {
+	display: block;
+	margin-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+	width: 100%;
+}
+
+/**
+ * General styles
+ */
+.btn,
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/**
+ * Remove right margin on last element and inputs
+ */
+.btn:last-child,
+input.btn {
+	margin-right: 0;
+}
+
+/**
+ * @section Forms
+ * Styling for form elements.
+ */
+form,
+fieldset {
+	margin-bottom: 1.5625em;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+legend,
+label {
+	display: block;
+	margin: 0 0 0.3125em;
+	padding: 0;
+}
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: #555555;
+	/* 1 */
+	font: inherit;
+	/* 2 */
+	margin: 0;
+	/* 3 */
+	padding: 0.3125em;
+}
+@media (prefers-color-scheme: dark) {
+	button,
+input,
+optgroup,
+select,
+textarea {
+		background-color: #e5e5e5;
+		color: #272727;
+	}
+}
+
+input,
+textarea,
+select {
+	border: 1px solid #b8b8b8;
+	display: block;
+	line-height: 1.5;
+	margin-bottom: 1.1875em;
+	width: 100%;
+}
+@media (min-width: 38em) {
+	input,
+textarea,
+select {
+		line-height: 1.5625;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	input,
+textarea,
+select {
+		border-color: #808080;
+	}
+}
+
+form button,
+form .btn {
+	margin-bottom: 1.1875em;
+}
+
+textarea {
+	height: 8em;
+	overflow: auto;
+	resize: vertical;
+}
+
+[type=image],
+[type=checkbox],
+[type=radio] {
+	cursor: pointer;
+	display: inline-block;
+	height: auto;
+	margin-bottom: 0.3125em;
+	padding: 0;
+	width: auto;
+}
+
+[type=checkbox],
+[type=radio] {
+	margin-right: 0.25em;
+}
+
+input:focus,
+textarea:focus {
+	border-color: rgba(82, 168, 236, 0.8);
+}
+
+/**
+ * Inline inputs
+ */
+.input-inline {
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+}
+
+/**
+ * Condensed inputs
+ */
+.input-condensed {
+	line-height: 1;
+	padding-top: 0.125em;
+	padding-bottom: 0.125em;
+	vertical-align: top;
+}
+
+/**
+ * Search
+ */
+/**
+ * Create rounded search bar
+ */
+.input-search {
+	width: 85%;
+	padding-left: 0.9375em;
+	padding-right: 2.5em;
+	border-radius: 1.3125em;
+}
+
+/**
+ * Special styling for search icon as button
+ */
+.btn-search {
+	display: inline;
+	color: #808080;
+	border: none;
+	background: none;
+	margin-left: -2.5em;
+	margin-bottom: 0;
+}
+.btn-search:hover {
+	color: #5a5a5a;
+}
+
+/**
+ * @section Form Validation
+ * Styling for form validation
+ */
+.error {
+	border-color: #e30810;
+}
+@media (prefers-color-scheme: dark) {
+	.error {
+		border-color: #fdbbbd;
+	}
+}
+
+.success-message,
+.error-message {
+	font-style: italic;
+}
+
+.error-message {
+	color: #e30810;
+	margin-bottom: 1em;
+}
+@media (prefers-color-scheme: dark) {
+	.error-message {
+		color: #fdbbbd;
+	}
+}
+
+/**
+ * @Section Images
+ * Image styling
+ */
+figure {
+	margin: 0 0 1.5625em;
+	padding: 0;
+}
+
+figcaption {
+	font-size: 0.9375em;
+	font-style: italic;
+	color: #808080;
+	padding-top: 0.5em;
+	text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+	figcaption {
+		color: #e5e5e5;
+	}
+}
+
+/**
+ * Adds a border
+ */
+.img-border {
+	border: 1px solid #cccccc;
+}
+
+/**
+ * Adds a 50% border radius, turning square images into a circle.
+ */
+.img-circle {
+	border-radius: 50%;
+}
+
+/**
+ * Image alignment
+ */
+.img-center, .img-left {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 28em) {
+	.img-left {
+		float: left;
+		margin-right: 1em;
+	}
+}
+
+/**
+ * @Section Icons
+ * Adjust SVG fills in dark mode
+ */
+@media (prefers-color-scheme: dark) {
+	svg path[fill="#272727"] {
+		fill: #ffffff;
+	}
+	svg path[fill="#808080"] {
+		fill: #e5e5e5;
+	}
+	svg path[fill="#f7272f"] {
+		fill: #fdd4d5;
+	}
+	svg path[fill="#800080"] {
+		fill: #ff4dff;
+	}
+	svg path[fill="#ffffff"] {
+		fill: #1f252f;
+	}
+
+	.company-logo path {
+		fill: #ffffff;
+	}
+}
+/**
+ * @section FluidVids
+ * Responsive iframe videos
+ */
+iframe {
+	aspect-ratio: 16/9;
+	background-color: #f7f7f7;
+	height: 100%;
+	margin-bottom: 1.5625em;
+	width: 100%;
+}
+
+/**
+ * @section Callouts
+ * Styling for callout boxes
+ */
+.callout {
+	background-color: #f7f7f7;
+	border: 1px solid #e5e5e5;
+	margin-bottom: 1.5625em;
+	padding: 1em 1.5em;
+}
+@media (prefers-color-scheme: dark) {
+	.callout {
+		background-color: #171b22;
+		border-color: #808080;
+	}
+}
+
+/**
+ * @section Honeypot
+ * Styling for honeypot fields
+ */
+.tarpit {
+	display: none;
+}
+
+/**
+ * @section Tables
+ * Styling for tables
+ */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 1.5625em;
+	max-width: 100%;
+	width: 100%;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 0.5em;
+}
+
+th {
+	border-bottom: 0.125em solid #e5e5e5;
+	font-weight: bold;
+	vertical-align: bottom;
+}
+
+td {
+	border-top: 1px solid #e5e5e5;
+	vertical-align: top;
+}
+
+/**
+ * Adds zebra striping
+ */
+.table-striped tbody tr:nth-child(odd) {
+	background-color: #f7f7f7;
+}
+
+/**
+ * @section Main Nav
+ * Styling for the main navigation area
+ */
+/**
+ * The navigation wrapper
+ */
+.nav-wrap {
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	text-align: center;
+}
+@media (min-width: 60em) {
+	.nav-wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/**
+ * The logo
+ */
+.logo {
+	display: inline-block;
+	font-family: "PT Serif", sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.2;
+	margin-bottom: 0.3125em;
+	text-decoration: none;
+}
+@media (min-width: 60em) {
+	.logo {
+		margin-bottom: 0;
+	}
+}
+.logo, .logo:focus {
+	color: #272727;
+}
+@media (prefers-color-scheme: dark) {
+	.logo, .logo:focus {
+		color: #ffffff;
+	}
+}
+.logo:active, .logo:hover {
+	color: #0088cc;
+}
+@media (prefers-color-scheme: dark) {
+	.logo:active, .logo:hover {
+		color: #73cffa;
+	}
+}
+
+/**
+ * The navigation menu
+ */
+.nav {
+	margin-bottom: 0;
+}
+.nav a {
+	color: #808080;
+	text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+	.nav a {
+		color: #e5e5e5;
+	}
+}
+.nav a:hover,
+.nav a:active,
+.nav a:focus,
+.nav .active a,
+.nav [aria-current=page] {
+	border-bottom: 0.125em solid #fa7176;
+	color: #272727;
+}
+@media (prefers-color-scheme: dark) {
+	.nav a:hover,
+.nav a:active,
+.nav a:focus,
+.nav .active a,
+.nav [aria-current=page] {
+		color: #ffffff;
+	}
+}
+
+/**
+ * @section Secondary Nav
+ * Styling for the secondary navigation area
+ */
+/**
+ * @section Overrides
+ * Nudge and tweak alignment, spacing, and visibility.
+ */
+/**
+ * Text sizes
+ */
+.text-small {
+	font-size: 0.9375em;
+}
+
+.text-large, .text-xlarge {
+	font-size: 1.1875em;
+	line-height: 1.4;
+}
+@media (min-width: 38em) {
+	.text-large, .text-xlarge {
+		font-size: 1.3125em;
+	}
+}
+
+.text-xlarge {
+	font-size: 1.7em;
+}
+@media (min-width: 38em) {
+	.text-xlarge {
+		font-size: 2em;
+	}
+}
+
+/**
+ * Text colors
+ */
+.text-muted {
+	color: #808080;
+}
+@media (prefers-color-scheme: dark) {
+	.text-muted {
+		color: #e5e5e5;
+	}
+}
+
+.text-muted-light, .btn del {
+	color: #b2b2b2;
+}
+
+/**
+ * Text transforms
+ */
+.text-normal {
+	font-weight: normal;
+	font-style: normal;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.text-sans {
+	font-family: "PT Sans", sans-serif;
+}
+
+.text-serif {
+	font-family: "PT Serif", sans-serif;
+}
+
+/**
+ * Text alignment
+ */
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+@media (min-width: 38em) {
+	.text-right-large {
+		text-align: right;
+	}
+}
+/**
+ * Margins
+ */
+.no-margin-top {
+	margin-top: 0;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.margin-top {
+	margin-top: 1.5625em;
+}
+
+.margin-bottom, audio {
+	margin-bottom: 1.5625em;
+}
+
+.margin-bottom-small {
+	margin-bottom: 0.5em;
+}
+
+.margin-bottom-medium {
+	margin-bottom: 1.1875em;
+}
+
+.margin-bottom-large {
+	margin-bottom: 2em;
+}
+
+.margin-bottom-negative {
+	margin-bottom: -1.75em;
+}
+
+.margin-right {
+	margin-right: 0.25em;
+}
+
+/**
+ * Padding
+ */
+.no-padding-top {
+	padding-top: 0;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0;
+}
+
+.padding-top {
+	padding-top: 1.5625em;
+}
+
+.padding-top-xsmall {
+	padding-top: 0.25em;
+}
+
+.padding-top-small {
+	padding-top: 0.5em;
+}
+
+.padding-top-medium {
+	padding-top: 1em;
+}
+
+.padding-top-large {
+	padding-top: 2em;
+}
+
+.padding-top-xlarge {
+	padding-top: 3em;
+}
+
+.padding-bottom {
+	padding-bottom: 1.5625em;
+}
+
+.padding-bottom-small {
+	padding-bottom: 0.5em;
+}
+
+.padding-bottom-large {
+	padding-bottom: 2em;
+}
+
+.padding-bottom-xlarge {
+	padding-bottom: 3em;
+}
+
+/**
+ * Accessibility
+ */
+/*
+ * Hide only visually, but have it available for screen readers:
+ * @link https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+.screen-reader {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	/* 1 */
+	width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard
+ * @link https://www.drupal.org/node/897638
+ */
+.screen-reader-focusable:active,
+.screen-reader-focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	white-space: inherit;
+	width: auto;
+}
+
+/**
+ * Remove all animations and transitions for people that prefer not to see them
+ */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+/**
+ * Clear any floats
+ */
+.clearfix:before, .container:before,
+.clearfix:after,
+.container:after {
+	display: table;
+	content: " ";
+}
+
+.clearfix:after, .container:after {
+	clear: both;
+}
+
+/**
+ * @section Print
+ * Styling for printed content. Adapted from HTML5BP.
+ * @link http://html5boilerplate.com
+ */
+@media print {
+	/**
+	 * Universal selector.
+	 * Reset all content to transparent background, black color, and remove box and text shadows.
+	 */
+	* {
+		background: transparent !important;
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	/**
+	 * Specifies page margin
+	 */
+	@page {
+		margin: 0.5cm;
+	}
+	/**
+	 * Underline all links
+	 */
+	a,
+a:visited {
+		text-decoration: underline;
+	}
+
+	/**
+	 * Show URL after links
+	 */
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	/**
+	 * Don't show URL for internal links
+	 */
+	a[href^="#"]:after {
+		content: "";
+	}
+
+	/**
+	 * Specifies the minimum number of lines to print at the top and bottom of a page.
+	 */
+	p,
+h1, h2, h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	/**
+	 * Avoid inserting a page break after headers
+	 */
+	h1, h2, h3 {
+		page-break-after: avoid;
+	}
+
+	/**
+	 * Change border color on blockquotes and preformatted text.
+	 * Avoid page breaks inside the content
+	 */
+	pre,
+blockquote {
+		border-color: #999;
+		page-break-inside: avoid;
+	}
+
+	/**
+	 * Displayed as a table header row group
+	 */
+	thead {
+		display: table-header-group;
+	}
+
+	/**
+	 * Avoid inserting a page break inside table rows and images
+	 */
+	tr,
+img {
+		page-break-inside: avoid;
+	}
+
+	/**
+	 * Hide header and footer nav, and email subscribe form
+	 */
+	header .nav,
+footer,
+main aside form {
+		display: none;
+	}
+
+	/**
+	 * Remove body border
+	 */
+	body {
+		border-top: none;
+	}
+}
+			.img-hero{width:88%;}
+		</style>
+	</head>
+
+	<body class="type-projects page-list" id="page-3a71e2d65a6b876f7027ee955e76a5e8">
+
+		<div class="container container-large">
+
+	
+	<a class="screen-reader screen-reader-focusable" href="#main">Skip to main content</a>
+
+	
+	<a class="screen-reader screen-reader-focusable" href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#103;&#111;&#109;&#097;&#107;&#101;&#116;&#104;&#105;&#110;&#103;&#115;&#046;&#099;&#111;&#109;?subject=Go%20Make%20Things:%20Accessibility%20Feedback">Accessibility Feedback</a>
+
+</div>
+
+		<header class="container container-large margin-bottom">
+	<nav class="nav-wrap">
+		<a class="logo" href="https://vanillajsprojects.com">
+			<svg xmlns="http://www.w3.org/2000/svg" width="0.8em" height="0.8em" viewBox="0 0 16 16" aria-hidden="true"><g fill="currentColor" fill-rule="nonzero"><path d="M6.439 10.376L7.525 9.29l-.815-.815-1.086 1.086c-1.832-.509-4.548 1.833-5.6 3.598l2.817 2.817c1.969-1.188 4.073-3.903 3.598-5.6zM8.475 6.71l.815.815 4.581-4.582a.594.594 0 01.849 0c.272.238.679.305.95.102a.711.711 0 00.102-1.086L14.075.262c-.305-.306-.848-.272-1.086.102-.204.305-.17.712.102.95a.594.594 0 010 .848L8.475 6.71z"/><path d="M10.376 9.561L2.943 2.128a.594.594 0 010-.848c.238-.238.305-.679.102-.95A.711.711 0 001.959.228L.262 1.925A.711.711 0 00.364 3.01a.766.766 0 00.95-.102.594.594 0 01.848 0l7.4 7.467c-.51 1.833 1.832 4.514 3.597 5.6l2.817-2.817c-1.154-1.935-3.87-4.107-5.6-3.598z"/></g></svg>
+			Vanilla JS Projects
+		</a>
+		<div class="nav-menu" id="nav-menu">
+			<ul class="nav">
+				<li><a aria-current="page" href="https://vanillajsprojects.com/">The Projects</a></li><li><a href="https://courses.gomakethings.com">Access Purchases &rarr;</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+		<main id="main" tabindex="-1">
+
+			<div class="container">
+
+	<article>
+
+	
+	<h1>Vanilla JS Projects</h1>
+	
+
+	
+
+</article>
+
+				<p><em>If you have any questions about anything, feel free to send me an email at <a href="mailto:&#099;&#104;&#114;&#105;&#115;&#064;&#103;&#111;&#109;&#097;&#107;&#101;&#116;&#104;&#105;&#110;&#103;&#115;&#046;&#099;&#111;&#109;">&#099;&#104;&#114;&#105;&#115;&#064;&#103;&#111;&#109;&#097;&#107;&#101;&#116;&#104;&#105;&#110;&#103;&#115;&#046;&#099;&#111;&#109;</a>.</em></p>
+
+			</div>
+		</main>
+
+		<footer class="container container-large">
+			<hr class="margin-bottom">
+			<nav class="tabindex nav-secondary" id="nav-secondary" tabindex="-1">
+	<ul class="list-inline list-inline-responsive">
+		<li><a href="https://vanillajsprojects.com/">The Projects</a></li><li><a href="https://courses.gomakethings.com">Access Purchases &rarr;</a></li>
+	</ul>
+</nav>
+			<p class="text-small">Made with ❤️ in Massachusetts by <a href="https://gomakethings.com">Chris Ferdinandi</a>. Unless otherwise noted, all code is free to use under the <a href="https://vanillajsprojects.com/mit">MIT License</a>.</p>
+		</footer>
+
+		<script>
+			/*! guides v2.0.0 | (c) 2022 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/vanilla-js-guides */
+(function () {
+	'use strict';
+
+	// Variables
+	let buyNow = document.querySelectorAll('.edd-buy-now-button');
+
+	// Handle "buy now" clicks
+	// Don't run if right-click or command/control + click
+	function buyNowHandler (event) {
+		if (!event.target.classList.contains('edd-buy-now-button')) return;
+		if (event.button !== 0 || event.metaKey || event.ctrlKey) return;
+		event.target.innerHTML = 'Adding to cart...';
+		event.target.classList.add('disabled');
+	}
+
+	// Listen for "buy now" clicks
+	if (buyNow.length > 0) {
+		document.addEventListener('click', buyNowHandler);
+	}
+
+	function convertkit (callback) {
+
+		//
+		// Variables
+		//
+
+		// Fields
+		let form = document.querySelector('[data-form="convertkit"]');
+		if (!form) return;
+		let email = form.querySelector('#email');
+		if (!email) return;
+		let status = form.querySelector('[data-status]');
+		let btn = form.querySelector('[data-processing]');
+
+		// Messages
+		let messages = {
+			empty: 'Please provide an email address.',
+			notEmail: 'Please use a valid email address.'
+		};
+
+
+		//
+		// Methods
+		//
+
+		/**
+		 * Show a status message
+		 * @param  {String}  msg     The message to show
+		 * @param  {Boolean} success If true, the status was successful
+		 */
+		function showStatus (msg, success) {
+
+			// Bail if there's no status container
+			if (!status) return;
+
+			// Update the status message
+			status.textContent = msg;
+
+			// Set status classes
+			if (success) {
+				status.classList.add('success-message');
+				status.classList.remove('error-message');
+				email.classList.remove('error');
+			} else {
+				status.classList.add('error-message');
+				status.classList.remove('success-message');
+				email.classList.add('error');
+			}
+
+		}
+
+		/**
+		 * Send data to the API
+		 */
+		function sendData () {
+			fetch(form.action, {
+				method: 'POST',
+				body: new FormData(form),
+				headers: {
+					'Accept': 'application/json'
+				}
+			}).then(function (response) {
+				if (response.ok) {
+					return response.json();
+				}
+				throw response;
+			}).then(function (data) {
+				showStatus(data.msg, true);
+				if (data.redirect) {
+					window.location.href = data.redirect;
+				}
+			}).catch(function (error) {
+				error.json().then(function (err) {
+					showStatus(err.msg);
+				});
+			}).finally(function () {
+				form.removeAttribute('data-submitting');
+			});
+		}
+
+		/**
+		 * Validate the email address
+		 * @return {Boolean} If true, email is valid
+		 */
+		function isEmail () {
+			return /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$/.test(email.value);
+		}
+
+		/**
+		 * Validate the form fields
+		 * @return {Boolean} If true, form is valid
+		 */
+		function validate () {
+
+			// If no email is provided
+			if (email.value.length < 1) {
+				showStatus(messages.empty);
+				return false;
+			}
+
+			// If email is not valid
+			if (!isEmail()) {
+				showStatus(messages.notEmail);
+				return false;
+			}
+
+			return true;
+
+		}
+
+		/**
+		 * Handle submit events
+		 * @param  {Event} event The event object
+		 */
+		function submitHandler (event) {
+
+			// Stop form from submitting
+			event.preventDefault();
+
+			// Don't run again if form currently submitting
+			if (form.hasAttribute('data-submitting')) return;
+
+			// Show submitting status
+			showStatus(btn.getAttribute('data-processing'), true);
+
+			// Validate email
+			if (!validate()) return;
+
+			// Add submitting state
+			form.setAttribute('data-submitting', '');
+
+			// Send the data to the MailChimp API
+			sendData();
+
+		}
+
+
+		//
+		// Event Listeners & Inits
+		//
+
+		form.addEventListener('submit', submitHandler);
+		form.setAttribute('novalidate', '');
+
+	}
+
+	/**
+	 * Load pricing parity message
+	 */
+	function pricingParity (endpoint, template) {
+
+		// Make sure endpoint and template exist
+		if (!endpoint) return;
+
+		// Render the pricing parity message
+		function renderPricingParity (data) {
+
+			// Make sure we have data and a template to render
+			if (!data || !template) return;
+
+			// Make sure discount exists
+			if (data.status === 'no_discount') return;
+
+			// Get the nav
+			let nav = document.querySelector('header');
+			if (!nav) return;
+
+			// Create container
+			let pricing = document.createElement('div');
+			pricing.id = 'pricing-parity';
+			pricing.className = 'bg-muted padding-top-small padding-bottom-small';
+			pricing.innerHTML = template.replace('{{iso}}', data.code).replace('{{country}}', data.country).replace('{{code}}', data.discount).replace('{{amount}}', data.amount);
+
+			// Insert into the DOM
+			nav.parentNode.insertBefore(pricing, nav);
+
+		}
+
+		// Get the pricing parity message via Ajax
+		function getPricingParity () {
+			fetch(endpoint).then(function (response) {
+				if (response.ok) {
+					return response.json();
+				}
+				return Promise.reject(response);
+			}).then(function (data) {
+
+				// Save the content to sessionStorage
+				sessionStorage.setItem('gmt-location-pricing', JSON.stringify(data));
+
+				// Render it
+				renderPricingParity(data);
+
+			});
+		}
+
+		// Get and render pricing parity info
+		let pricing = sessionStorage.getItem('gmt-location-pricing');
+		if (pricing) {
+			renderPricingParity(JSON.parse(pricing));
+		} else {
+			getPricingParity();
+		}
+
+	}
+
+	// ConvertKit form
+	convertkit();
+
+	// Pricing parity
+	pricingParity('https://gomakethings.com/checkout/wp-json/gmt-pricing-parity/v1/discount/', '<div class="container container-large"><img width="100" style="float:left;margin: 0.125em 1em 1em 0;" src="https://flagpedia.net/data/flags/normal/{{iso}}.png"><p class="text-small no-margin-bottom">Hi! Looks like you\'re from <strong>{{country}}</strong>, where my <strong>Vanilla JS Pocket Guides</strong> might be a bit expensive. A <strong>{{amount}}% discount</strong> will automatically be applied to every guide, course, and bundle at checkout. Cheers!</p></div>');
+
+}());
+
+			/*! guides v2.0.0 | (c) 2022 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/vanilla-js-guides */
+(function () {
+	'use strict';
+
+	// Initialize the service worker
+	if (navigator && navigator.serviceWorker) {
+		navigator.serviceWorker.register('/sw.js');
+	}
+
+	// Cleanup old cache on page load
+	if (navigator.serviceWorker.controller) {
+		window.addEventListener('load', function () {
+			navigator.serviceWorker.controller.postMessage('cleanUp');
+		});
+	}
+
+}());
+
+		</script>
+	</body>
+</html>

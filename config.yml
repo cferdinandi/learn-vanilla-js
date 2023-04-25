@@ -1,10 +1,14 @@
 # hostname (and path) to the root
 baseURL: "https://learnvanillajs.com"
 
+# Site title
+title: "Learn JavaScript"
+
 # Customer parameters
 params:
-  description: "What is vanilla JS, and why should you learn it?"
+  description: "A JavaScript course and ebook for beginners. Build your first JavaScript library in about a week."
   api: "https://gomakethings.com/api/data.json"
+  sales: "https://gomakethings.com/checkout/wp-json/gmt-edd/v1/sales?category=learnjs&start=02-01-2022&round=10&96gdGDPqokbFsy3Lbx7LwTBdYNDxpo4a=GbwzXPHRqqCDKyy38TYmAybvV8AZZUJHmuA8zKKMjJ2ZUXFG7LcCy2rLAMmU8HEZ"
   rssURL: ""
   rssLimit: 7
   minify: true
@@ -12,21 +16,24 @@ params:
 # Caches
 caches:
   getjson:
-    maxAge: "10m"
+    maxAge: "1m"
 
 # The language code for the site
 languageCode: "en-us"
 
-# Site title
-title: "Learn Vanilla JS"
-
 # theme to use (located by default in /themes/THEMENAME/)
 theme: "gmt"
+
+Language:
+  LanguageName: "English"
 
 # Permalinks
 # See "content-management/permalinks"
 permalinks:
-  roadmap: /:section/:title/
+  course: /:filename/
+
+# Use absolute URLs
+canonifyURLs: true
 
 # Allows you to disable all page types and will render nothing related to 'kind';
 # values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"

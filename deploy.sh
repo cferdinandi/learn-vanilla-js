@@ -1,0 +1,1 @@
+git add . && git commit -a -m "Updated sales page" && git push origin master

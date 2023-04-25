@@ -5,7 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 		<meta name="description" content="{{ if .IsHome }}{{ $.Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
-		{{ if .Params.noIndex }}<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">{{ end }}
+		{{ if or (.Params.noIndex) (.Params.redirect) }}<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">{{ end }}
+
+		{{ if .Params.redirect }}
+		<link rel="canonical" href="{{ .Params.redirect }}">
+		<meta http-equiv="refresh" content="0; url={{ .Params.redirect }}">
+		{{ end }}
 
 		<!-- Mobile Screen Resizing -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,22 +26,28 @@
 		<!-- Icons: place in the root directory -->
 		<!-- https://github.com/audreyr/favicon-cheat-sheet -->
 		<link rel="shortcut icon" href="{{ "/img/favicon.ico" | absURL }}">
-		<link rel="icon" sizes="16x16 24x24 32x32 64x64" href="{{ "/img/favicon.ico" | absURL }}">
+		<link rel="icon" sizes="16x16 32x32" href="{{ "/img/favicon.ico" | absURL }}">
+
+		{{ if false }}
+		<!-- RSS Feed -->
+		<!-- {{ "posts/index.xml" | absURL }} -->
+		<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} RSS Feed" href="{{ $.Site.Params.rssURL }}">
+		<link rel="feed" type="application/rss+xml" title="{{ .Site.Title }} RSS Feed" href="{{ $.Site.Params.rssURL }}">
+		{{ end }}
 
 		<!-- Stylesheet -->
 		<style type="text/css">
 			{{ readFile "/themes/gmt/static/css/fonts.css" | safeCSS }}
 			{{ if eq $.Site.Params.minify true }}{{ readFile "/themes/gmt/static/css/main.min.css" | safeCSS }}{{ else }}{{ readFile "/themes/gmt/static/css/main.css" | safeCSS }}{{ end }}
+			.img-hero{width:88%;}
 		</style>
 	</head>
 
-	<body class="type-{{ .Type }} {{ if .IsPage }}page-single{{ else }}page-list{{ end }}{{ if .Params.anchors }} js-anchors{{ end }}" id="page-{{ .UniqueID }}">
+	<body class="type-{{ .Type }} {{ if .IsPage }}page-single{{ else }}page-list{{ end }}" id="page-{{ .UniqueID }}">
 
-		{{ if false }}
 		{{ partial "nav-a11y.html" }}
 
 		{{ partial "nav-main.html" . }}
-		{{ end }}
 
 		<main id="main" tabindex="-1">
 

@@ -1,0 +1,10 @@
+{{ if eq ( .Get "package" ) "bundles" }}
+- **[The Starter Bundle.]({{ .Site.Data.products.starter.url }})** {{ .Site.Data.products.starter.description }}
+{{ end }}
+
+{{ if or (eq ( .Get "package" ) "starter") (eq ( .Get "package" ) "complete") }}
+- **[{{ .Site.Data.products.fortuneTeller.name }}.]({{ .Site.Data.products.fortuneTeller.url }})** {{ .Site.Data.products.fortuneTeller.description }}
+- **[{{ .Site.Data.products.tableOfContents.name }}.]({{ .Site.Data.products.tableOfContents.url }})** {{ .Site.Data.products.tableOfContents.description }}
+- **[{{ .Site.Data.products.randomize.name }}.]({{ .Site.Data.products.randomize.url }})** {{ .Site.Data.products.randomize.description }}
+- **[{{ .Site.Data.products.githubAPI.name }}.]({{ .Site.Data.products.githubAPI.url }})** {{ .Site.Data.products.githubAPI.description }}
+{{ end }}

@@ -1,7 +1,7 @@
 {
-	"name": "learn-vanilla-js",
-	"version": "1.0.0",
-	"description": "The theme for learn-vanilla-js.com",
+	"name": "guides",
+	"version": "2.0.0",
+	"description": "The theme for gomakethings.com",
 	"author": {
 		"name": "Chris Ferdinandi",
 		"url": "http://gomakethings.com"
@@ -9,12 +9,12 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/cferdinandi/learn-vanilla-js"
+		"url": "http://github.com/cferdinandi/vanilla-js-guides"
 	},
 	"scripts": {
 		"clean": "rm -rf static/img && rm -rf static/js && rm -rf static/svg",
 		"js": "rollup --config",
-		"svg": "svgo -f src/svg static/svg --disable=removeViewBox,removeTitle",
+		"svg": "svgo -f src/svg static/svg",
 		"copy": "cp -r src/img static/img",
 		"build": "npm run clean && npm run js && npm run svg && npm run copy"
 	},

@@ -1,2 +1,10 @@
-{{ if .Get "intro" }}{{ partial "mailchimp-intro.html" . }}{{ end }}
+{{- if .Get "intro" -}}
+{{- $data := getJSON $.Site.Params.api -}}
+{{- $ctas := index $data "ctas" -}}
+
+<h2>Get Daily Developer Tips</h2>
+
+{{ if isset $ctas "ck-blurb" }}<p>{{ index $ctas "ck-blurb" | markdownify }}</p>{{ end }}
+{{- end -}}
+
 {{ partial "mailchimp-form.html" }}

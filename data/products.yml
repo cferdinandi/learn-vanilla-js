@@ -1,0 +1,29 @@
+starter:
+    id: 62522
+    name: "Starter Bundle"
+    description: "The first step in your JavaScript journey... FREE!"
+    url: "/starter-bundle/"
+
+fortuneTeller:
+    id: null
+    name: "Fortune Teller"
+    description: "Build an app that tells users their fortune."
+    url: "/fortune-teller/"
+
+tableOfContents:
+    id: null
+    name: "Table of Contents"
+    description: "Write a small library that dynamically adds a table of contents to a site based on the page headings."
+    url: "/table-of-contents/"
+
+randomize:
+    id: null
+    name: "Randomize App"
+    description: "Build an app that helps you randomly choose from a list of options."
+    url: "/randomize/"
+
+githubAPI:
+    id: null
+    name: "GitHub API"
+    description: "Use the GitHub API to dynamically render a list of your GitHub repositories and profile details on a webpage."
+    url: "/github-api/"

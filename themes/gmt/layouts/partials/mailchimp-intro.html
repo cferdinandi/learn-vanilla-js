@@ -1,6 +1,0 @@
-{{- $data := getJSON $.Site.Params.api -}}
-{{- $ctas := index $data "ctas" -}}
-
-<h2 id="newsletter">Get Daily Developer Tips</h2>
-
-{{ if isset $ctas "ck-blurb" }}<p>{{ index $ctas "ck-blurb" | markdownify }}</p>{{ end }}

@@ -1,0 +1,4 @@
+# Allow cross-domain access to these files
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, OPTIONS"
+Header set Access-Control-Allow-Headers "*"
