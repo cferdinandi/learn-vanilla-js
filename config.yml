@@ -8,7 +8,7 @@ title: "Learn JavaScript"
 params:
   description: "A JavaScript course and ebook for beginners. Build your first JavaScript library in a few hours."
   api: "https://gomakethings.com/api/data.json"
-  sales: "https://gomakethings.com/checkout/wp-json/gmt-edd/v1/sales?category=learnjs&start=02-01-2022&round=10&96gdGDPqokbFsy3Lbx7LwTBdYNDxpo4a=GbwzXPHRqqCDKyy38TYmAybvV8AZZUJHmuA8zKKMjJ2ZUXFG7LcCy2rLAMmU8HEZ"
+  sales: "https://gomakethings.com/checkout/wp-json/gmt-edd/v1/sales?category=learnjs&start=04-01-2023&round=10&96gdGDPqokbFsy3Lbx7LwTBdYNDxpo4a=GbwzXPHRqqCDKyy38TYmAybvV8AZZUJHmuA8zKKMjJ2ZUXFG7LcCy2rLAMmU8HEZ"
   rssURL: ""
   rssLimit: 7
   minify: true
