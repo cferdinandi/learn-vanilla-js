@@ -1,5 +1,5 @@
 ---
-title: "Vanilla JS Projects"
+title: Learn JavaScript
 date: 2018-01-16T10:05:20-05:00
 draft: false
 noTitle: true
@@ -10,7 +10,7 @@ description: ""
 
 <span class="text-large">Get 45 lessons, 7 projects, and 1 rock solid foundation for your JavaScript journey. Build your first JS library in a few hours.</span>
 
-{{<cta for="funnel">}}
+{{<cta for="learnjs">}}
 
 {{<purchase-link>}}
 
