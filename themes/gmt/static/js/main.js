@@ -1,4 +1,4 @@
-/*! guides v2.0.0 | (c) 2022 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/vanilla-js-guides */
+/*! guides v2.0.0 | (c) 2023 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/vanilla-js-guides */
 (function () {
 	'use strict';
 
@@ -165,7 +165,51 @@
 
 	}
 
+	// Product URLs
+
+	/**
+	 * Get the value of a cookie
+	 * Source: https://gist.github.com/wpsmith/6cf23551dd140fb72ae7
+	 * @return {String}       The cookie value
+	 */
+	function getCookie () {
+		let value = '; ' + document.cookie;
+		let parts = value.split(`; gmt_aff=`);
+		if (parts.length == 2) return parts.pop().split(';').shift();
+	}
+
+	/**
+	 * Get affiliate from URL and set cookie
+	 */
+	function getAffiliate () {
+		let url = new URL(window.location.href);
+		let aff = url.searchParams.get('friend');
+		if (!aff) return;
+		url.searchParams.delete('friend');
+		history.replaceState(history.state, '', url.href);
+		document.cookie = `gmt_aff=${aff}; path=/; max-age=${60 * 60 * 24 * 28};`;
+	}
+
+	/**
+	 * Add affiliate code to each purchase link
+	 * @param {String} selector The selector string for links
+	 */
+	function setAffiliate (selector = '.edd-buy-now-button') {
+		let aff = getCookie();
+		if (!aff) return;
+		let links = document.querySelectorAll(selector);
+		for (let link of links) {
+			let url = new URL(link);
+			url.searchParams.set('friend', aff);
+			link.href = url.href;
+		}
+	}
+
 	// ConvertKit form
 	convertkit();
+
+	// Affiliate marketing
+	getAffiliate();
+	setAffiliate();
 
 }());
